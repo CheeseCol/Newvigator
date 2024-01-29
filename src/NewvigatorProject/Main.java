@@ -1,7 +1,10 @@
 package NewvigatorProject;
 
 import NewvigatorProject.HelperPackage.ConfigTreemapInitialiser;
+import NewvigatorProject.MainMenuUserInterface.MainMenuUserInterface;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
@@ -165,5 +168,32 @@ public class Main {
     public static void main(String[] args){
         //Initialise Program.
         ConfigTreemapInitialiser.Initialise();
+        //Open a non static main.
+        extender();
+    }
+
+    public static void extender(){
+        //This allows the execution of non-static methods after setting up static parameters (such as from files).
+        Main m = new Main();
+        m.mainNonStatic();
+    }
+    public void mainNonStatic() {
+        try {
+            openPanel();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void openPanel() throws IOException {
+        //Opens an instance of the main menu
+        JFrame MainMenuUIPanel = new JFrame("MainMenuUserInterface");
+        //the content we are opening is the "Main User Panel" which contains a few buttons.
+        MainMenuUIPanel.setContentPane(new MainMenuUserInterface().MainPanel);
+        //This is a default setting for what to do when the user closes the window.
+        //In this case, the instance of the window causes the program to exit.
+        MainMenuUIPanel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        MainMenuUIPanel.pack();
+        //And finally the window must actually be visible, so it can be used.
+        MainMenuUIPanel.setVisible(true);
     }
 }
