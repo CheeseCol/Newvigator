@@ -24,7 +24,7 @@
             </constraints>
             <properties>
               <font name="Poppins"/>
-              <text value="Voice Guide"/>
+              <text value="Voice Guid"/>
             </properties>
           </component>
           <component id="90ec3" class="javax.swing.JButton" binding="exitButton">

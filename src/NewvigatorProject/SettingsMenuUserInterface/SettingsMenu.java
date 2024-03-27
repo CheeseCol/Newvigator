@@ -5,7 +5,6 @@ import NewvigatorProject.Main;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 public class SettingsMenu {
     private JPanel parentPanel;
     private JPanel buttonsPanel;
@@ -20,7 +19,12 @@ public class SettingsMenu {
     private JRadioButton tenEightyButton;
     private JRadioButton enabledButton;
     private JRadioButton disabledButton;
-public SettingsMenu() {
+
+    /**
+     * change
+     */
+
+    public SettingsMenu() {
     accessibilityButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
