@@ -1,5 +1,7 @@
 package NewvigatorProject.SettingsMenuUserInterface;
 
+import NewvigatorProject.Main;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,21 +42,21 @@ public SettingsMenu() {
     disabledButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Main.voiceGuideEnabled = false;
+            Main.accessibilityValue = 0;
             JOptionPane.showMessageDialog(null, "Voice Guide Disabled");
         }
     });
     enabledButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Main.voiceGuideEnabled = true;
+            Main.accessibilityValue = 1;
             JOptionPane.showMessageDialog(null, "Voice Guide Enabled");
         }
     });
     fourEightyButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Main.resolution = 0;
+            Main.resolutionSetting = -1;
             JOptionPane.showMessageDialog(null, "Resolution set to 640x480p");
 
         }
@@ -62,14 +64,14 @@ public SettingsMenu() {
     sevenTwnetyButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Main.resolution = 1;
+            Main.resolutionSetting = 0;
             JOptionPane.showMessageDialog(null, "Resolution set to 1280x720p");
         }
     });
     tenEightyButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Main.resolution = 2;
+            Main.resolutionSetting = 4;
             JOptionPane.showMessageDialog(null, "Resolution set to 1920x1080p");
         }
     });
