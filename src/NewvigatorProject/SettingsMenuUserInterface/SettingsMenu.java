@@ -21,7 +21,7 @@ public class SettingsMenu {
     private JRadioButton disabledButton;
 
     /**
-     * change
+     * chang
      */
 
     public SettingsMenu() {
